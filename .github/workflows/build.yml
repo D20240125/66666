@@ -23,12 +23,7 @@ jobs:
         pip install pyinstaller
 
     - name: 打包 EXE
-      run: |
-        pyinstaller -w ^
-        -i icon.ico ^
-        --add-data "icon.ico;." ^
-        --name "PDF Tools" ^
-        "split.py"
+      run: pyinstaller -w -i icon.ico --add-data "icon.ico;." --name "PDF Tools" split.py
 
     - name: 上传结果
       uses: actions/upload-artifact@v4
